@@ -1,0 +1,15 @@
+overwrite: true
+schema: 'https://fakeql.com/graphql/e4a120aec1d15425101c816fc0efcac5'
+documents: 'src/**/*.graphql'
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
+    config:
+      fetcher:
+        endpoint: 'https://fakeql.com/graphql/e4a120aec1d15425101c816fc0efcac5'
+  ./graphql.schema.json:
+    plugins:
+      - 'introspection'
